@@ -99,19 +99,7 @@ export default function SignInForm() {
               </div>
             </div>
 
-            <form
-              onSubmit={async (e) => {
-                e.preventDefault();
-
-                try {
-                  await login(email, password);
-
-                  navigate("/");
-                } catch (error) {
-                  console.log("LOGIN ERROR:", error);
-                }
-              }}
-            >
+            <form onSubmit={handleSubmit}>
               <div className="space-y-6">
                 {/* Email */}
                 <div>
@@ -124,7 +112,6 @@ export default function SignInForm() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="info@gmail.com"
                     type="email"
-                    required
                   />
                 </div>
 
@@ -139,8 +126,7 @@ export default function SignInForm() {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       type={showPassword ? "text" : "password"}
-                      placeholder="Enter your password"
-                      required
+                      placeholder="Enter your password" 
                     />
 
                     <span
