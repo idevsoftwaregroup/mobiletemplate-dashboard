@@ -53,7 +53,7 @@ export default function SignInForm() {
           className="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
         >
           <ChevronLeftIcon className="size-5" />
-          Back to dashboard
+          برگشت به داشبورد کاربری
         </Link>
       </div>
 
@@ -61,53 +61,26 @@ export default function SignInForm() {
         <div>
           <div className="mb-5 sm:mb-8">
             <h1 className="mb-2 font-semibold text-gray-800 text-title-sm dark:text-white/90 sm:text-title-md">
-              Sign In
+              ورود
             </h1>
 
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Enter your email and password to sign in!
+              برای ورود، ایمیل و پسورد را وارد نمایید!
             </p>
           </div>
 
           <div>
-            {/* Social Login - فعلاً UI */}
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5">
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-3 py-3 text-sm font-normal text-gray-700 transition-colors bg-gray-100 rounded-lg px-7 hover:bg-gray-200 hover:text-gray-800 dark:bg-white/5 dark:text-white/90 dark:hover:bg-white/10"
-              >
-                Sign in with Google
-              </button>
-
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-3 py-3 text-sm font-normal text-gray-700 transition-colors bg-gray-100 rounded-lg px-7 hover:bg-gray-200 hover:text-gray-800 dark:bg-white/5 dark:text-white/90 dark:hover:bg-white/10"
-              >
-                Sign in with X
-              </button>
-            </div>
-
-            <div className="relative py-3 sm:py-5">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-200 dark:border-gray-800" />
-              </div>
-
-              <div className="relative flex justify-center text-sm">
-                <span className="p-2 text-gray-400 bg-white dark:bg-gray-900 sm:px-5 sm:py-2">
-                  Or
-                </span>
-              </div>
-            </div>
 
             <form onSubmit={handleSubmit}>
               <div className="space-y-6">
                 {/* Email */}
                 <div>
                   <Label>
-                    Email <span className="text-error-500">*</span>
+                    ایمیل <span className="text-error-500">*</span>
                   </Label>
 
                   <Input
+                    className="text-end"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="info@gmail.com"
@@ -118,15 +91,16 @@ export default function SignInForm() {
                 {/* Password */}
                 <div>
                   <Label>
-                    Password <span className="text-error-500">*</span>
+                    پسورد <span className="text-error-500">*</span>
                   </Label>
 
                   <div className="relative">
                     <Input
+                      className="text-end"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       type={showPassword ? "text" : "password"}
-                      placeholder="Enter your password" 
+                      placeholder="Enter your password"
                     />
 
                     <span
@@ -158,7 +132,7 @@ export default function SignInForm() {
                     />
 
                     <span className="block font-normal text-gray-700 text-theme-sm dark:text-gray-400">
-                      Keep me logged in
+                      حفظ اطلاعات ورود
                     </span>
                   </div>
 
@@ -166,7 +140,7 @@ export default function SignInForm() {
                     to="/reset-password"
                     className="text-sm text-brand-500 hover:text-brand-600 dark:text-brand-400"
                   >
-                    Forgot password?
+                    فراموشی پسورد ؟!
                   </Link>
                 </div>
 
@@ -178,7 +152,7 @@ export default function SignInForm() {
                     size="sm"
                     disabled={loading}
                   >
-                    {loading ? "Signing in..." : "Sign in"}
+                    {loading ? "در حال ورود ..." : "ورود"}
                   </Button>
                 </div>
               </div>
@@ -186,12 +160,12 @@ export default function SignInForm() {
 
             <div className="mt-5">
               <p className="text-sm font-normal text-center text-gray-700 dark:text-gray-400 sm:text-start">
-                Don&apos;t have an account?{" "}
+                آیا حساب کاربری ندارید ؟{" "}
                 <Link
                   to="/signup"
                   className="text-brand-500 hover:text-brand-600 dark:text-brand-400"
                 >
-                  Sign Up
+                  ثبت نام کنید
                 </Link>
               </p>
             </div>

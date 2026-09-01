@@ -9,8 +9,8 @@ export default function Images() {
   return (
     <>
       <PageMeta
-        title="React.js Images Dashboard | TailAdmin - React.js Admin Dashboard Template"
-        description="This is React.js Images page for TailAdmin - React.js Tailwind CSS Admin Dashboard Template"
+        title="پروفایل | دست خط"
+        description="دست خط | ردپای ذهن بر روی کاغذ دیجیتال"
       />
       <PageBreadcrumb pageTitle="Images" />
       <div className="space-y-5 sm:space-y-6">

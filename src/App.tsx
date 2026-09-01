@@ -11,6 +11,9 @@ import { ScrollToTop } from "./components/common/ScrollToTop";
 import { Navigate } from "react-router";
 import { isAuthenticated } from "./services/auth.service";
 
+// Import the Products API:
+import Products from "./pages/Products/Products.tsx";
+
 // function ProtectedRoute({ children }: { children: React.ReactNode }) {
 //   if (!isAuthenticated()) {
 //     return <Navigate to="/signin" replace />;
@@ -46,6 +49,10 @@ export default function App() {
           }
         >
           <Route path="/" element={<Home />} />
+
+
+          <Route path="/products" element={<Products />} />
+
         </Route>
 
         <Route path="*" element={<NotFound />} />
