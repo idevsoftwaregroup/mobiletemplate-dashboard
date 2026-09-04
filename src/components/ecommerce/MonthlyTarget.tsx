@@ -69,10 +69,10 @@ export default function MonthlyTarget() {
         <div className="flex justify-between">
           <div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-              Monthly Target
+              تارگت های اخیر ماهیانه
             </h3>
             <p className="mt-1 text-gray-500 text-theme-sm dark:text-gray-400">
-              Target you’ve set for each month
+              اهدافی را که برای فروش ماهیانه در نظر گرفته اید !
             </p>
           </div>
           <div className="relative inline-block">
