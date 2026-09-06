@@ -40,7 +40,7 @@ const navItems: NavItem[] = [
     name: "صفحه های کاری",
     icon: <PageIcon />,
     subItems: [
-      { name: "Blank Page", path: "/blank", pro: false },
+      { name: "مدیریت صفحه ها", path: "/pages", pro: false },
       { name: "404 Error", path: "/error-404", pro: false },
     ],
   },

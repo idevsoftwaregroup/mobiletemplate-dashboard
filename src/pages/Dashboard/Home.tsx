@@ -24,6 +24,17 @@ export default function Home() {
           <MonthlyTarget />
         </div>
 
+<<<<<<< HEAD
+=======
+        {/*<div className="col-span-12">
+          <StatisticsChart />
+        </div>
+
+        <div className="col-span-12 xl:col-span-5">
+          <DemographicCard />
+        </div>*/}
+
+>>>>>>> dev-20260916-1beta0000001
         <div className="col-span-12 xl:col-span-12">
           <RecentOrders />
         </div>

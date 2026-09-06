@@ -13,6 +13,7 @@ import { isAuthenticated } from "./services/auth.service";
 
 // Import the Products API:
 import Products from "./pages/Products/Products.tsx";
+import Pages from "./pages/Pages/Pages.tsx";
 
 // function ProtectedRoute({ children }: { children: React.ReactNode }) {
 //   if (!isAuthenticated()) {
@@ -50,8 +51,11 @@ export default function App() {
         >
           <Route path="/" element={<Home />} />
 
-
           <Route path="/products" element={<Products />} />
+
+          <Route path="/pages" element={<Pages />} />
+
+          <Route path="/error-404" element={ <NotFound /> } />
 
         </Route>
 
