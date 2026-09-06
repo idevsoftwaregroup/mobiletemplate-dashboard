@@ -5,8 +5,36 @@ import {
   GroupIcon,
 } from "../../icons";
 import Badge from "../ui/badge/Badge";
+import { getToken } from "../../services/auth.service";
+import { useEffect, useState } from "react";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function EcommerceMetrics() {
+  const [usersCount, setUsersCount] = useState(0);
+  const [productsCount, setProductsCount] = useState(0);
+  useEffect(() => {
+    const loadMetrics = async () => {
+      try {
+        const token = getToken();
+        const response = await fetch(`${API_URL}/dashboard/metrics`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (!response.ok) {
+          throw new Error("Failed to fetch Dashboard Metrics !");
+        }
+        const data = await response.json();
+        // Set the data:
+        setUsersCount(data.users);
+        setProductsCount(data.products);
+      } catch (error) {
+        console.error(error)
+      }
+    };
+    loadMetrics();
+  }, [])
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
       {/* <!-- Metric Item Start --> */}
@@ -18,10 +46,10 @@ export default function EcommerceMetrics() {
         <div className="flex items-end justify-between mt-5">
           <div>
             <span className="text-sm text-gray-500 dark:text-gray-400">
-              Customers
+              مشتری ها
             </span>
             <h4 className="mt-2 font-bold text-gray-800 text-title-sm dark:text-white/90">
-              3,782
+              {usersCount.toLocaleString() + " نفر"}
             </h4>
           </div>
           <Badge color="success">
@@ -40,10 +68,10 @@ export default function EcommerceMetrics() {
         <div className="flex items-end justify-between mt-5">
           <div>
             <span className="text-sm text-gray-500 dark:text-gray-400">
-              Orders
+              محصول ها
             </span>
             <h4 className="mt-2 font-bold text-gray-800 text-title-sm dark:text-white/90">
-              5,359
+              {productsCount.toLocaleString() + " عدد"}
             </h4>
           </div>
 
