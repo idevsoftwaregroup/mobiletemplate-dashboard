@@ -28,26 +28,42 @@ type NavItem = {
 const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
-    name: "داشوبرد کاری",
+    name: "داشبورد",
     subItems: [{ name: "ای کامرس", path: "/", pro: false }],
   },
   {
-    icon: <BoxCubeIcon />,
-    name: "محصولات",
-    path: "/products",
-  },
-  {
-    name: "صفحه های کاری",
+    name: "مدیریت کسب وکار",
     icon: <PageIcon />,
     subItems: [
-      { name: "مدیریت صفحه ها", path: "/pages", pro: false },
-      { name: "404 Error", path: "/error-404", pro: false },
+      {
+        name: "سفارش ها",
+        path: "/orders",
+        new: true,
+        icon: <PageIcon />,
+      },
+      {
+        icon: <PageIcon />,
+        name: "پرداخت ها",
+        path: "/payments",
+      },
+      {
+        icon: <PageIcon />,
+        name: "محصول ها",
+        path: "/products",
+      },
     ],
   },
   {
-    icon: <UserCircleIcon />,
-    name: "پروفایل کاربری",
-    path: "/profile",
+    name: "تنظیمات",
+    icon: <PageIcon />,
+    subItems: [
+      { name: "مدیریت صفحه ها", path: "/pages", pro: false },
+      {
+        name: "پروفایل کاربری",
+        icon: <UserCircleIcon />,
+        path: "/profile",
+      },
+    ],
   },
 ];
 
@@ -79,14 +95,14 @@ const AppSidebar: React.FC = () => {
     index: number;
   } | null>(null);
   const [subMenuHeight, setSubMenuHeight] = useState<Record<string, number>>(
-    {}
+    {},
   );
   const subMenuRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   // const isActive = (path: string) => location.pathname === path;
   const isActive = useCallback(
     (path: string) => location.pathname === path,
-    [location.pathname]
+    [location.pathname],
   );
 
   useEffect(() => {
@@ -268,8 +284,8 @@ const AppSidebar: React.FC = () => {
           isExpanded || isMobileOpen
             ? "w-[290px]"
             : isHovered
-            ? "w-[290px]"
-            : "w-[90px]"
+              ? "w-[290px]"
+              : "w-[90px]"
         }
         ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}
         lg:translate-x-0`}
@@ -281,10 +297,7 @@ const AppSidebar: React.FC = () => {
           !isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
         }`}
       >
-        <Link
-          to="/"
-          className="flex w-full items-center justify-center"
-        >
+        <Link to="/" className="flex w-full items-center justify-center">
           {isExpanded || isHovered || isMobileOpen ? (
             <>
               <img
@@ -342,7 +355,7 @@ const AppSidebar: React.FC = () => {
                 }`}
               >
                 {isExpanded || isHovered || isMobileOpen ? (
-                  "تنظیمات"
+                  "گزارش ها"
                 ) : (
                   <HorizontaLDots />
                 )}

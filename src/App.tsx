@@ -14,14 +14,9 @@ import { isAuthenticated } from "./services/auth.service";
 // Import the Products API:
 import Products from "./pages/Products/Products.tsx";
 import Pages from "./pages/Pages/Pages.tsx";
+import Orders from "./pages/Orders/Orders.tsx";
+import Payments from "./pages/Payments/Payments.tsx";
 
-// function ProtectedRoute({ children }: { children: React.ReactNode }) {
-//   if (!isAuthenticated()) {
-//     return <Navigate to="/signin" replace />;
-//   }
-
-//   return children;
-// }
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const token = isAuthenticated();
 
@@ -53,10 +48,13 @@ export default function App() {
 
           <Route path="/products" element={<Products />} />
 
+          <Route path="/orders" element={<Orders />} />
+
+          <Route path="/payments" element={<Payments />} />
+
           <Route path="/pages" element={<Pages />} />
 
-          <Route path="/error-404" element={ <NotFound /> } />
-
+          <Route path="/error-404" element={<NotFound />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />

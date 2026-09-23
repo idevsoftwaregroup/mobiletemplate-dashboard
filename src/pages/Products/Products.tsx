@@ -192,7 +192,6 @@ export default function Products() {
 
                           setIsEditProductOpen(true);
                         }}
-
                         className="rounded-lg bg-blue-50 px-3 py-1 text-xs text-blue-600"
                       >
                         ویرایش
@@ -207,7 +206,6 @@ export default function Products() {
                   text-xs
                   text-red-600
                   "
-
                         onClick={() => {
                           handleDelete(product.id);
                         }}
@@ -232,14 +230,11 @@ export default function Products() {
       />
       <EditProductModal
         isOpen={isEditProductOpen}
-
         product={selectedProduct}
-
         onClose={() => {
           setIsEditProductOpen(false);
           setSelectedProduct(null);
         }}
-
         onUpdated={() => {
           loadProducts();
 
