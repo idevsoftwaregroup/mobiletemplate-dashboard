@@ -44,6 +44,18 @@ export async function getProducts(): Promise<Product[]> {
   return data;
 }
 
+export async function getProductById(id: string): Promise<Product> {
+  const response = await fetch(`${API_URL}/products/${id}`);
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Failed to fetch product");
+  }
+
+  return data;
+}
+
 export async function deleteProduct(id: string) {
   const token = getToken();
 
