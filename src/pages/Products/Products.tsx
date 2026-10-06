@@ -9,7 +9,7 @@ import EditProductModal from "../../components/products/EditProductModal.tsx";
 
 const API_URL = import.meta.env.VITE_API_URL;
 const SERVER_URL = API_URL.replace("/api", "");
-const BACKEND_URL = "http://localhost:3000";
+const BACKEND_URL = "http://0.0.0.0:3000";
 
 export default function Products() {
   const [products, setProducts] = useState<Product[]>([]);

@@ -59,7 +59,7 @@ interface OrdersResponse {
   data: Order[];
 }
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+const API_URL = import.meta.env.VITE_API_URL || "http://0.0.0.0:3000/api";
 
 function formatPrice(price: string) {
   return `${Number(price).toLocaleString("en-US")} تومان`;

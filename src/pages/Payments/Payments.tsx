@@ -8,7 +8,7 @@ import type { Product } from "../../services/products.services";
 import "../../assets/css/dialog.css";
 import { CheckCircleIcon } from "../../icons";
 import imgUrl from "../../assets/images/product-placeholder.jpg";
-const SERVER_URL = "http://localhost:3000";
+const SERVER_URL = "http://0.0.0.0:3000";
 type PaymentStatus = "UNPAID" | "PENDING" | "PAID" | "FAILED" | "REFUNDED";
 export default function Payments() {
   const [payments, setPayments] = useState<Payment[]>([]);

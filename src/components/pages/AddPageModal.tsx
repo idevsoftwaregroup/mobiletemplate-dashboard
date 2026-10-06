@@ -72,11 +72,7 @@ export default function AddPageModal({
             <div>
               <Label>عنوان</Label>
 
-              <Input
-                value={title}
-
-                onChange={(e) => setTitle(e.target.value)}
-              />
+              <Input value={title} onChange={(e) => setTitle(e.target.value)} />
             </div>
 
             <div>
@@ -84,9 +80,7 @@ export default function AddPageModal({
 
               <select
                 value={typeOfPage}
-
                 onChange={(e) => setTypeOfPage(e.target.value)}
-
                 className="w-full rounded-lg border p-2"
               >
                 <option value="about">درباره ما</option>
@@ -98,11 +92,7 @@ export default function AddPageModal({
             <div>
               <Label>Slug</Label>
 
-              <Input
-                value={slug}
-
-                onChange={(e) => setSlug(e.target.value)}
-              />
+              <Input value={slug} onChange={(e) => setSlug(e.target.value)} />
             </div>
 
             <div>
@@ -110,11 +100,8 @@ export default function AddPageModal({
 
               <textarea
                 rows={6}
-
                 value={content}
-
                 onChange={(e) => setContent(e.target.value)}
-
                 className="w-full rounded-lg border p-3"
               />
             </div>
@@ -124,15 +111,12 @@ export default function AddPageModal({
 
               <input
                 type="file"
-
                 accept="image/*"
-
                 onChange={(e) => {
                   if (e.target.files) {
                     setImage(e.target.files[0]);
                   }
                 }}
-
                 className="w-full rounded-lg border p-2"
               />
             </div>
@@ -142,7 +126,6 @@ export default function AddPageModal({
 
               <Input
                 value={seoTitle}
-
                 onChange={(e) => setSeoTitle(e.target.value)}
               />
             </div>
@@ -152,11 +135,8 @@ export default function AddPageModal({
 
               <textarea
                 rows={3}
-
                 value={seoDescription}
-
                 onChange={(e) => setSeoDescription(e.target.value)}
-
                 className="w-full rounded-lg border p-3"
               />
             </div>
